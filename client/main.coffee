@@ -5,7 +5,7 @@ window.onload = () ->
 
   if navigator.geolocation?
 
-    socket = io.connect 'http://192.168.178.21:8080/game'
+    socket = io.connect "http://#{window.location.hostname}:8080/game"
     socket.on 'connect', () ->
       console.log 'connected'
       watchID = null
